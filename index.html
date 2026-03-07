@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>SunRP</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+color:white;
+background:linear-gradient(270deg,#000,#ff7b00,#000,#ff5500);
+background-size:600% 600%;
+animation:tlo 12s ease infinite;
+}
+
+@keyframes tlo{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+background:black;
+padding:20px;
+}
+
+.logo{
+width:200px;
+display:block;
+margin:auto;
+animation:logo 3s infinite alternate;
+}
+
+@keyframes logo{
+0%{transform:scale(1);}
+100%{transform:scale(1.1);}
+}
+
+nav{
+background:#111;
+padding:15px;
+}
+
+nav a{
+color:orange;
+margin:20px;
+text-decoration:none;
+font-size:18px;
+}
+
+.section{
+padding:60px;
+}
+
+button{
+background:orange;
+border:none;
+padding:14px 35px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+margin:5px;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.licznik{
+font-size:28px;
+margin-top:20px;
+color:orange;
+}
+
+.karty{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.karta{
+background:#111;
+border:1px solid orange;
+border-radius:10px;
+padding:20px;
+margin:15px;
+width:230px;
+}
+
+.avatar{
+width:80px;
+border-radius:50%;
+}
+
+</style>
+
+<script>
+
+async function licznik(){
+
+try{
+
+let res = await fetch("https://servers-frontend.fivem.net/api/servers/single/SERVERID");
+let data = await res.json();
+
+document.getElementById("players").innerText =
+data.Data.clients + " / " + data.Data.sv_maxclients;
+
+}catch{
+
+document.getElementById("players").innerText="offline";
+
+}
+
+}
+
+setInterval(licznik,5000);
+
+</script>
+
+</head>
+
+<body onload="licznik()">
+
+<header>
+
+<img class="logo" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp?ex=69adf5e5&is=69aca465&hm=9a9625954f57182dcb0b56d79fa6a01dd409ad7364758eb7a1c7e51d31bba65c&">
+
+</header>
+
+<nav>
+
+<a href="#start">Start</a>
+<a href="#admin">Administracja</a>
+<a href="#frakcje">Frakcje</a>
+<a href="#rangi">Rangi</a>
+
+</nav>
+
+<div class="section" id="start">
+
+<a href="fivem://connect/SERVERIP">
+<button>🎮 GRAJ NA SUNRP</button>
+</a>
+
+<br><br>
+
+<a href="https://discord.gg/dJy3EtCbah">
+<button>💬 DOŁĄCZ DO DC</button>
+</a>
+
+<div class="licznik">
+Gracze online: <span id="players">ładowanie...</span>
+</div>
+
+</div>
+
+<div class="section" id="admin">
+
+<h2>Administracja SunRP</h2>
+
+<div class="karty">
+
+<div class="karta">
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp">
+<h3>👑 Właściciel</h3>
+<p>mr.franek</p>
+</div>
+
+<div class="karta">
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp">
+<h3>🛡 Główny Zarząd Serwera</h3>
+<p>dorek23</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="frakcje">
+
+<h2>Frakcje</h2>
+
+<div class="karty">
+
+<div class="karta">
+<h3>🚓 SASP</h3>
+<p>50 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🚑 EMS</h3>
+<p>50 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🔧 Mechanik</h3>
+<p>50 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="rangi">
+
+<h2>Rangi</h2>
+
+<div class="karty">
+
+<div class="karta">
+<h3>Trial Support</h3>
+<p>10 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>Support</h3>
+<p>50 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>Moderator</h3>
+<p>100 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>Administrator</h3>
+<p>150 zł</p>
+<button>BLIK</button>
+<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<title>SunRP - Serwer FiveM RolePlay</title>
+
+<meta name="description" content="Oficjalna strona serwera SunRP FiveM. Dołącz do gry, kup rangi i frakcje SASP, EMS, Mechanik.">
+
+<link rel="icon" href="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp"> 
+
+<link rel="icon" href='https://github.com/u8021053036-max/SunRP.git">
