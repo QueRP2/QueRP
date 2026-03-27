@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+
 <meta charset="UTF-8">
-<title>SunRP</title>
+<title>QueRP - Oficjalna Strona</title>
+
+<meta name="description" content="QueRP - serwer FiveM RolePlay. Dołącz i kup rangi, pojazdy oraz usługi.">
+<meta name="keywords" content="QueRP, FiveM, GTA RP">
+
+<link rel="icon" href="https://cdn.discordapp.com/attachments/1466541868383731824/1486001578811850772/logo.png">
 
 <style>
 
@@ -11,7 +17,7 @@ margin:0;
 font-family:Arial;
 text-align:center;
 color:white;
-background:linear-gradient(270deg,#000,#ff7b00,#000,#ff5500);
+background:linear-gradient(270deg,#000,#0a0a0a,#0044ff,#000);
 background-size:600% 600%;
 animation:tlo 12s ease infinite;
 }
@@ -28,10 +34,11 @@ padding:20px;
 }
 
 .logo{
-width:200px;
+width:230px;
 display:block;
 margin:auto;
 animation:logo 3s infinite alternate;
+filter: drop-shadow(0 0 15px #00aaff);
 }
 
 @keyframes logo{
@@ -45,7 +52,7 @@ padding:15px;
 }
 
 nav a{
-color:orange;
+color:#00aaff;
 margin:20px;
 text-decoration:none;
 font-size:18px;
@@ -56,13 +63,14 @@ padding:60px;
 }
 
 button{
-background:orange;
+background:#00aaff;
 border:none;
 padding:14px 35px;
 font-size:18px;
 border-radius:10px;
 cursor:pointer;
 margin:5px;
+color:black;
 }
 
 button:hover{
@@ -72,7 +80,7 @@ transform:scale(1.1);
 .licznik{
 font-size:28px;
 margin-top:20px;
-color:orange;
+color:#00aaff;
 }
 
 .karty{
@@ -83,15 +91,15 @@ flex-wrap:wrap;
 
 .karta{
 background:#111;
-border:1px solid orange;
+border:1px solid #00aaff;
 border-radius:10px;
 padding:20px;
 margin:15px;
-width:230px;
+width:260px;
 }
 
 .avatar{
-width:80px;
+width:100px;
 border-radius:50%;
 }
 
@@ -100,9 +108,7 @@ border-radius:50%;
 <script>
 
 async function licznik(){
-
 try{
-
 let res = await fetch("https://servers-frontend.fivem.net/api/servers/single/SERVERID");
 let data = await res.json();
 
@@ -110,11 +116,8 @@ document.getElementById("players").innerText =
 data.Data.clients + " / " + data.Data.sv_maxclients;
 
 }catch{
-
 document.getElementById("players").innerText="offline";
-
 }
-
 }
 
 setInterval(licznik,5000);
@@ -126,30 +129,27 @@ setInterval(licznik,5000);
 <body onload="licznik()">
 
 <header>
-
-<img class="logo" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp?ex=69adf5e5&is=69aca465&hm=9a9625954f57182dcb0b56d79fa6a01dd409ad7364758eb7a1c7e51d31bba65c&">
-
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1466541868383731824/1486001578811850772/logo.png?ex=69c7ded0&is=69c68d50&hm=2c9cdce8c9db5891b1a946e8cc2b2170456deea061826ab6b2f40bf2ca3fd16a&">
 </header>
 
 <nav>
-
 <a href="#start">Start</a>
-<a href="#admin">Administracja</a>
-<a href="#frakcje">Frakcje</a>
+<a href="#tworcy">Twórcy</a>
 <a href="#rangi">Rangi</a>
-
+<a href="#sklep">Sklep</a>
+<a href="#unbany">Unbany</a>
 </nav>
 
 <div class="section" id="start">
 
 <a href="fivem://connect/SERVERIP">
-<button>🎮 GRAJ NA SUNRP</button>
+<button>🎮 GRAJ NA QUE RP</button>
 </a>
 
 <br><br>
 
-<a href="https://discord.gg/dJy3EtCbah">
-<button>💬 DOŁĄCZ DO DC</button>
+<a href="https://discord.gg/GH4tKZn3g6">
+<button>💬 DISCORD</button>
 </a>
 
 <div class="licznik">
@@ -158,53 +158,22 @@ Gracze online: <span id="players">ładowanie...</span>
 
 </div>
 
-<div class="section" id="admin">
+<div class="section" id="tworcy">
 
-<h2>Administracja SunRP</h2>
-
-<div class="karty">
-
-<div class="karta">
-<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp">
-<h3>👑 Właściciel</h3>
-<p>mr.franek</p>
-</div>
-
-<div class="karta">
-<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp">
-<h3>🛡 Główny Zarząd Serwera</h3>
-<p>dorek23</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section" id="frakcje">
-
-<h2>Frakcje</h2>
+<h2>Twórcy QueRP</h2>
 
 <div class="karty">
 
 <div class="karta">
-<h3>🚓 SASP</h3>
-<p>50 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1487197195848519811/R32.png?ex=69c843d2&is=69c6f252&hm=018eff384a0a05ca7a625d89a6176ad6d4fa0e1201d7170a0a188f87f739e9da&">
+<h3>👑 Twórca QueRP</h3>
+<p><b>dorek23</b></p>
 </div>
 
 <div class="karta">
-<h3>🚑 EMS</h3>
-<p>50 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
-</div>
-
-<div class="karta">
-<h3>🔧 Mechanik</h3>
-<p>50 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1479187096018096149/1487197712108486706/screenshot_2026-01-22_21-13-23.png?ex=69c8444d&is=69c6f2cd&hm=e62a9f41ddb7c349a1360c357e6006bfe3fbb2abef9de82220f496a8637e9b2b&">
+<h3>⭐ 2 Twórca QueRP</h3>
+<p><b>yaks_4</b></p>
 </div>
 
 </div>
@@ -220,29 +189,79 @@ Gracze online: <span id="players">ładowanie...</span>
 <div class="karta">
 <h3>Trial Support</h3>
 <p>10 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<a href="#"><button>PayPal</button></a>
 </div>
 
 <div class="karta">
 <h3>Support</h3>
 <p>50 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<a href="#"><button>PayPal</button></a>
 </div>
 
 <div class="karta">
 <h3>Moderator</h3>
 <p>100 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<a href="#"><button>PayPal</button></a>
 </div>
 
 <div class="karta">
 <h3>Administrator</h3>
 <p>150 zł</p>
-<button>BLIK</button>
-<a href="https://paypal.me/TwojPayPal"><button>PayPal</button></a>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="sklep">
+
+<h2>Sklep QueRP</h2>
+
+<div class="karty">
+
+<div class="karta">
+<h3>🚗 Pojazd limitowany</h3>
+<p>100 zł</p>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🔄 Zmiana pojazdu</h3>
+<p>15 zł</p>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🏠 Interior </h3>
+<p>45 zł</p>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+</div>
+
+<div class="section" id="unbany">
+
+<h2>Unbany QueRP</h2>
+
+<div class="karty">
+
+<div class="karta">
+<h3>🔓 Unban permanentny</h3>
+<p>50 zł</p>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🔓 Unban 7 dni</h3>
+<p>30 zł</p>
+<a href="#"><button>PayPal</button></a>
+</div>
+
+<div class="karta">
+<h3>🔓 Unban 24h</h3>
+<p>15 zł</p>
+<a href="#"><button>PayPal</button></a>
 </div>
 
 </div>
@@ -252,10 +271,12 @@ Gracze online: <span id="players">ładowanie...</span>
 </body>
 </html>
 
-<title>SunRP - Serwer FiveM RolePlay</title>
 
-<meta name="description" content="Oficjalna strona serwera SunRP FiveM. Dołącz do gry, kup rangi i frakcje SASP, EMS, Mechanik.">
+
+<title>QueRP - Serwer FiveM RolePlay</title>
+
+<meta name="description" content="Oficjalna strona serwera QueRP FiveM. Dołącz do gry, kup rangi i graj z nami">
 
 <link rel="icon" href="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp"> 
 
-<link rel="icon" href='https://github.com/u8021053036-max/SunRP.git">
+<link rel="icon" href='https:QueRP.git">
