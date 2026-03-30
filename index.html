@@ -189,25 +189,41 @@ Gracze online: <span id="players">ładowanie...</span>
 <div class="karta">
 <h3>Trial Support</h3>
 <p>10 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick1" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('trial support',10,'nick1')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>Support</h3>
 <p>50 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick2" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('support',50,'nick2')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>Moderator</h3>
 <p>100 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick3" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('moderator',100,'nick3')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>Administrator</h3>
 <p>150 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick4" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('administrator',150,'nick4')">Kup</button>
 </div>
 
 </div>
@@ -223,19 +239,31 @@ Gracze online: <span id="players">ładowanie...</span>
 <div class="karta">
 <h3>🚗 Pojazd limitowany</h3>
 <p>100 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick5" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('pojazd limitowany',100,'nick5')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>🔄 Zmiana pojazdu</h3>
 <p>15 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick6" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('zmiana pojazdu',15,'nick6')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>🏠 Interior </h3>
 <p>45 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick7" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('interior',45,'nick7')">Kup</button>
 </div>
 
 </div>
@@ -249,34 +277,63 @@ Gracze online: <span id="players">ładowanie...</span>
 <div class="karta">
 <h3>🔓 Unban permanentny</h3>
 <p>50 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick8" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('unban pernamentny',50,'nick8')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>🔓 Unban 7 dni</h3>
 <p>30 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick9" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('unban 7dni',30,'nick9')">Kup</button>
 </div>
 
 <div class="karta">
 <h3>🔓 Unban 24h</h3>
 <p>15 zł</p>
-<a href="#"><button>PayPal</button></a>
+<input type="text" id="nick10" placeholder="Twój nick Discord">
+
+<br><br>
+
+<button onclick="kup('unban 24h',15,'nick10')">Kup</button>
 </div>
 
+</div>
+<script>
+
+function kup(nazwa, cena, pole){
+
+let nick = document.getElementById(pole).value;
+
+if(nick === ""){
+alert("Podaj nick Discord!");
+return;
+}
+
+fetch("https://discord.com/api/webhooks/TWOJ_WEBHOOK", {
+method: "POST",
+headers: {"Content-Type": "application/json"},
+body: JSON.stringify({
+content: "💰 NOWY ZAKUP!\nNick: " + nick + "\nProdukt: " + nazwa + "\nCena: " + cena + " zł"
+})
+});
+
+window.location.href = "https://paypal.me/MaksymilianSijka/" + cena;
+
+}
+
+</script>
 </div>
 
 </div>
 
 </body>
 </html>
-
-
-
-<title>QueRP - Serwer FiveM RolePlay</title>
-
-<meta name="description" content="Oficjalna strona serwera QueRP FiveM. Dołącz do gry, kup rangi i graj z nami">
-
-<link rel="icon" href="https://cdn.discordapp.com/attachments/1479187096018096149/1479966700777504820/Sunrp.webp"> 
 
 <link rel="icon" href='https:QueRP.git">
